@@ -4,4 +4,4 @@ services:
 before_install:
 - docker-compose up -d
 - docker-compose ps
-- docker-compose exec master -- ps -ef
+- docker-compose exec master ps -ef
