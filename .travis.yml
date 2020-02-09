@@ -4,3 +4,4 @@ services:
 before_install:
 - docker-compose up -d
 - docker-compose ps
+- docker-compose exec -it travis-ci-redis-sentinel_master -- ps -ef
