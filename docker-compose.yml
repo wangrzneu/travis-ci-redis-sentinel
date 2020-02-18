@@ -13,5 +13,6 @@ sentinel:
   links:
     - master:redis-master
     - slave
+    - sentinel
   expose:
     - 26379
