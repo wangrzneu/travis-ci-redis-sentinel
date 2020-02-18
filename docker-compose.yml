@@ -1,10 +1,14 @@
 master:
   image: redis:5
+  expose:
+    - 6379
 slave:
   image: redis:5
   command: redis-server --slaveof redis-master 6379
   links:
     - master:redis-master
+  expose:
+    - 6379
 sentinel:
   image: redis:5
   command: redis-server /redis-sentinel/sentinel.conf --sentinel
@@ -13,6 +17,5 @@ sentinel:
   links:
     - master:redis-master
     - slave
-    - sentinel
   expose:
     - 26379
