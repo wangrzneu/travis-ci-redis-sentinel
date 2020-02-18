@@ -3,6 +3,7 @@ services:
   - docker
 before_install:
 - pwd
+- ls -l
 - docker-compose up -d
 - docker-compose ps
 - docker-compose logs sentinel
