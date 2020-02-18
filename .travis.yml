@@ -7,5 +7,5 @@ before_install:
 - docker-compose ps
 - docker-compose logs sentinel
 - docker-compose exec master bash -c "redis-cli info"
-- docker-compose exec sentinel bash -c "redis-cli -p 26379 sentinel slaves mymaster"
+- docker-compose exec sentinel bash -c "redis-cli -p 26379 info"
 
