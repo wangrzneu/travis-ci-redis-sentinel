@@ -9,6 +9,8 @@ sentinel:
   image: redis:5
   command: redis-server /redis-sentinel/sentinel.conf --sentinel
   volumes:
-       - ./sentinel:/redis-sentinel
+    - ./sentinel:/redis-sentinel
   links:
     - master:redis-master
+  expose:
+    - 26379
