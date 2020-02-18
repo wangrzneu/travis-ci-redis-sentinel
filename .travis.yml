@@ -4,6 +4,7 @@ services:
 before_install:
 - pwd
 - ls -l
+- chmod 666 ./sentinel/sentinel.conf
 - docker-compose up -d
 - docker-compose ps
 - docker-compose logs sentinel
