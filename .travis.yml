@@ -6,10 +6,10 @@ before_install:
 - docker-compose up -d
 - docker-compose scale sentinel=3
 - docker-compose ps
-- sleep 120
+- sleep 240
 - docker-compose logs sentinel
 - docker-compose exec master bash -c "redis-cli info"
 - docker-compose exec sentinel bash -c "redis-cli -p 26379 SENTINEL sentinels mymaster"
 - docker-compose exec sentinel bash -c "redis-cli -p 26379 SENTINEL slaves mymaster"
-- docker-compose exec sentinel bash -c "redis-cli -p 26379 SENTINEL info"
+- docker-compose exec sentinel bash -c "redis-cli -p 26379 info"
 
