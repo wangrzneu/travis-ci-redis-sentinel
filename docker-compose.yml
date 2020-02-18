@@ -7,8 +7,8 @@ slave:
     - master:redis-master
 sentinel:
   image: redis:5
-  command: redis-server /sentinel/sentinel.conf --sentinel
+  command: redis-server /redis-sentinel/sentinel.conf --sentinel
   volumes:
-       - ./sentienl:/redis-sentinel
+       - ./sentinel:/redis-sentinel
   links:
     - master:redis-master
