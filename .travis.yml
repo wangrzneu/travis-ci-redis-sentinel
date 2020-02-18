@@ -4,6 +4,7 @@ services:
 before_install:
 - chmod 666 ./sentinel/sentinel.conf
 - docker-compose up -d
+- docker-compose scale sentinel=3
 - docker-compose ps
 - docker-compose logs sentinel
 - docker-compose exec master bash -c "redis-cli info"
