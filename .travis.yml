@@ -2,10 +2,10 @@ language: generic
 services:
   - docker
 before_install:
-- pwd
-- ls -l
 - chmod 666 ./sentinel/sentinel.conf
 - docker-compose up -d
 - docker-compose ps
 - docker-compose logs sentinel
 - docker-compose exec master bash -c "redis-cli info"
+- docker-compose exec sentinel bash -c "redis-cli -p 26379 sentinel slaves mymaster"
+
