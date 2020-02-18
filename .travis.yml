@@ -2,6 +2,7 @@ language: generic
 services:
   - docker
 before_install:
+- pwd
 - docker-compose up -d
 - docker-compose ps
 - docker-compose logs sentinel
