@@ -5,3 +5,10 @@ slave:
   command: redis-server --slaveof redis-master 6379
   links:
     - master:redis-master
+sentinel:
+  image: redis:5
+  command: redis-server /sentinel/sentinel.conf --sentinel
+  volumes:
+       - ./sentienl:/redis-sentinel
+  links:
+    - master:redis-master
